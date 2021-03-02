@@ -3,8 +3,7 @@
     outlined
     elevation="6"
     class="mx-auto"
-    max-width="344"
-  >
+    max-width="344">
     <v-card-text>
       <div>{{aCase.durationText}}</div>
       <p class="display-1 text--primary">
@@ -14,7 +13,10 @@
       <div class="text--primary">
         {{aCase.situation}}
       </div>
+      <v-divider class="my-2"></v-divider>
       <span class="font-weight-light text--primary">{{aCase.employeesText}}</span>
+      <br>
+      <span class="font-weight-light text--primary">{{creatorName}}</span>
     </v-card-text>
     <v-card-actions>
       <v-btn
@@ -31,6 +33,14 @@
 export default {
   props: {
     aCase: Object
-  }
+  },
+  computed: {
+    creatorName(){
+      let createdBy = 'Created by '
+      const userEmail = this.$store.getters.userEmail
+      createdBy += this.aCase.isTheCreator(userEmail) ? 'you' : this.aCase.creator.name
+      return createdBy
+    }
+  },
 }
 </script>

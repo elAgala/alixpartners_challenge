@@ -52,16 +52,18 @@ export default {
   }),
   methods: {
     addCase(aCase){
-      const newId = this.cases.length
+      const newId = this.cases[this.cases.length - 1].id + 1
       this.cases.push(new Case(aCase, newId))
       this.actualComponent = 'CasesPage'
     },
     editCase(aCase){
-      this.cases.splice(aCase.id, 1, new Case(aCase, aCase.id))
+      const index = this.cases.findIndex(c => c.id == aCase.id)
+      this.cases.splice(index, 1, new Case(aCase, aCase.id))
       this.actualComponent = 'CasesPage'
     },
     deleteCase(aCase){
-      this.cases.splice(aCase.id, 1)
+      const index = this.cases.findIndex(c => c.id == aCase.id)
+      this.cases.splice(index, 1)
       this.actualComponent = 'CasesPage'
     },
     showCaseInfo(aCase, mode){
