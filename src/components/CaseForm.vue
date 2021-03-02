@@ -66,7 +66,7 @@
           <v-select
             v-model="aCase.employees"
             color="green"
-            :rules="[v => !!v || 'Employees are required']"
+            :rules="[v => (!!v && v.length > 0) || 'Employees are required']"
             :items="employees"
             label="Employees involved"
             multiple
