@@ -2,7 +2,7 @@
 
 This code challenge has been made using Vue.js as JavaScript framework. In adittion to that, some modules/plugins like
 Vuex and Vuetify were used to complement and make the development easier.
-The programm counts with a local authentication method using some preset users that will be specified then.
+The program counts with a local authentication method using some preset users that will be specified then.
 
 ## Requirements
 
