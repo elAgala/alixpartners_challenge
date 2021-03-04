@@ -52,7 +52,7 @@ export default {
   }),
   methods: {
     addCase(aCase){
-      const newId = this.cases[this.cases.length - 1].id + 1
+      const newId = this.cases.length > 0 ? this.cases[this.cases.length - 1].id + 1 : 0
       this.cases.push(new Case(aCase, newId))
       this.actualComponent = 'CasesPage'
     },
