@@ -12,8 +12,7 @@
           color="success"
           class="mt-2"
           @click="showCaseInfo({}, 'add')">
-          Add
-          <v-icon>
+          Add <v-icon>
             mdi-plus-thick
           </v-icon>
         </v-btn>
